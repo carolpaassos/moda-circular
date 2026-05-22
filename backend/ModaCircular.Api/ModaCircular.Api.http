@@ -1,0 +1,6 @@
+@ModaCircular.Api_HostAddress = http://localhost:5222
+
+GET {{ModaCircular.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

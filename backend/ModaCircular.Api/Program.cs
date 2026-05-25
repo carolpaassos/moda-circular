@@ -1,3 +1,5 @@
+using ModaCircular.Api.Repositories;
+using ModaCircular.Api.Services;
 using ModaCircular.Api.Settings;
 using MongoDB.Driver;
 
@@ -37,6 +39,9 @@ builder.Services.AddSingleton<IMongoDatabase>(serviceProvider =>
     var mongoClient = serviceProvider.GetRequiredService<IMongoClient>();
     return mongoClient.GetDatabase(databaseName);
 });
+
+builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+builder.Services.AddScoped<ICategoriaService, CategoriaService>();
 
 var app = builder.Build();
 

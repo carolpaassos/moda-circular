@@ -13,6 +13,8 @@ public class Roupa
 
     public string Descricao { get; set; } = string.Empty;
 
+    public string ImagemUrl { get; set; } = string.Empty;
+
     public string Tipo { get; set; } = string.Empty;
 
     public string Tamanho { get; set; } = string.Empty;

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ModaCircular</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-conteudo">
+      <span class="tag">✦ Troca e doação de roupas ✦</span>
+      <h1>ModaCircular</h1>
+      <p>
+        Uma plataforma para dar novos caminhos às peças do seu guarda-roupa.
+      </p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>Menu</h2>
+
+      <button id="btnListarRoupas" class="menu-btn ativo">
+        <span class="icone">◌</span>
+        Roupas disponíveis
+      </button>
+
+      <button id="btnCadastrarRoupa" class="menu-btn">
+        <span class="icone">✚</span>
+        Cadastrar roupa
+      </button>
+
+      <button id="btnCategorias" class="menu-btn">
+        <span class="icone">✧</span>
+        Categorias
+      </button>
+    </aside>
+
+    <section class="area-conteudo">
+      <section id="mensagem" class="mensagem oculto"></section>
+      <section id="conteudo"></section>
+    </section>
+  </main>
+</body>
+</html>

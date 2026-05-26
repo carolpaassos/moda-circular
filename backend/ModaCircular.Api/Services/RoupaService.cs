@@ -33,6 +33,7 @@ public class RoupaService : IRoupaService
         {
             Titulo = roupaDto.Titulo.Trim(),
             Descricao = roupaDto.Descricao.Trim(),
+            ImagemUrl = roupaDto.ImagemUrl.Trim(),
             Tipo = roupaDto.Tipo.Trim(),
             Tamanho = roupaDto.Tamanho.Trim(),
             EstadoConservacao = roupaDto.EstadoConservacao.Trim(),
@@ -63,6 +64,7 @@ public class RoupaService : IRoupaService
 
         roupaExistente.Titulo = roupaDto.Titulo.Trim();
         roupaExistente.Descricao = roupaDto.Descricao.Trim();
+        roupaExistente.ImagemUrl = roupaDto.ImagemUrl.Trim();
         roupaExistente.Tipo = roupaDto.Tipo.Trim();
         roupaExistente.Tamanho = roupaDto.Tamanho.Trim();
         roupaExistente.EstadoConservacao = roupaDto.EstadoConservacao.Trim();

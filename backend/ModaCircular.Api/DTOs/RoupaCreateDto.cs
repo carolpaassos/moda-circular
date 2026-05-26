@@ -12,6 +12,8 @@ public class RoupaCreateDto
     [StringLength(500, ErrorMessage = "A descrição deve ter no máximo 500 caracteres.")]
     public string Descricao { get; set; } = string.Empty;
 
+    public string ImagemUrl { get; set; } = string.Empty;
+
     [Required(ErrorMessage = "O tipo é obrigatório. Informe Troca ou Doação.")]
     public string Tipo { get; set; } = string.Empty;
 

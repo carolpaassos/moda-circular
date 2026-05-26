@@ -42,6 +42,8 @@ builder.Services.AddSingleton<IMongoDatabase>(serviceProvider =>
 
 builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+builder.Services.AddScoped<IRoupaRepository, RoupaRepository>();
+builder.Services.AddScoped<IRoupaService, RoupaService>();
 
 var app = builder.Build();
 

@@ -87,5 +87,25 @@ A relação entre as entidades é:
 - Git
 - GitHub
 
+---
 
+## Pré-requisitos
 
+Para executar o projeto localmente, é necessário ter instalado:
+
+- .NET 10 SDK;
+- Docker Desktop;
+- Git;
+- Visual Studio Code;
+- Extensão Live Server no VS Code.
+
+---
+
+## Como executar o projeto
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/carolpaassos/moda-circular.git
+cd moda-circular
+```

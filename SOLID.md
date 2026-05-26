@@ -1,16 +1,16 @@
 # Princípios SOLID aplicados no ModaCircular
 
-Este documento apresenta alguns princípios SOLID aplicados no backend da aplicação ModaCircular.
+Este documento apresenta os princípios SOLID aplicados no backend da aplicação ModaCircular.
 
-O objetivo da organização do código foi separar responsabilidades, facilitar manutenção e deixar a API mais clara para evolução futura.
+A aplicação foi organizada em camadas para separar responsabilidades, facilitar manutenção e deixar o código mais claro para futuras evoluções.
 
 ---
 
 ## 1. S — Single Responsibility Principle
 
-O princípio da responsabilidade única diz que cada classe deve ter um único motivo para mudar.
+O princípio da responsabilidade única diz que uma classe deve ter apenas uma responsabilidade principal.
 
-No projeto, esse princípio foi aplicado separando as responsabilidades em camadas.
+No ModaCircular, esse princípio foi aplicado separando o backend em camadas específicas.
 
 ### Onde aparece
 
@@ -23,13 +23,13 @@ No projeto, esse princípio foi aplicado separando as responsabilidades em camad
 
 ### Justificativa
 
-Os controllers são responsáveis apenas por receber as requisições HTTP e retornar respostas adequadas.
+Os controllers são responsáveis apenas por receber as requisições HTTP e retornar respostas adequadas para o cliente.
 
-As services concentram as regras de negócio, como validar se uma categoria existe antes de cadastrar uma roupa.
+As services concentram as regras de negócio da aplicação, como validar se uma categoria existe antes de cadastrar uma roupa.
 
 Os repositories são responsáveis pela comunicação com o MongoDB.
 
-Com essa separação, uma alteração na regra de negócio não precisa ser feita diretamente no controller ou no código de acesso ao banco.
+Com essa separação, cada classe tem uma responsabilidade bem definida, evitando concentrar regras de negócio, acesso ao banco e controle de requisições em um único lugar.
 
 ---
 
@@ -47,9 +47,9 @@ O princípio da inversão de dependência diz que classes de alto nível não de
 
 ### Justificativa
 
-As services não dependem diretamente das classes concretas dos repositories. Elas dependem das interfaces `ICategoriaRepository` e `IRoupaRepository`.
+As services não dependem diretamente das classes concretas dos repositories. Elas dependem de interfaces.
 
-Exemplo:
+Exemplo em `CategoriaService.cs`:
 
 ```csharp
 private readonly ICategoriaRepository _categoriaRepository;

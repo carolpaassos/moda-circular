@@ -348,10 +348,10 @@ Foram implementados testes para os seguintes cenários:
 - criação de roupa com categoria existente;
 - tentativa de criação de roupa com categoria inexistente.
 
-Os testes foram criados com xUnit e podem ser executados com o comando:
+Os testes foram criados com xUnit e podem ser executados, a partir da raiz do projeto, com o comando:
 
 ```bash
-dotnet test
+dotnet test ModaCircular.slnx
 
 ### Bônus D — Princípios SOLID
 

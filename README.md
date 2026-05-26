@@ -36,6 +36,8 @@ Exemplos:
 - Calças
 - Vestidos
 
+Esses dados podem ser cadastrados pelo próprio frontend ou diretamente pelo Swagger, utilizando os endpoints de categorias e roupas.
+
 ### Roupa
 
 Representa uma peça disponível para troca ou doação.
@@ -334,6 +336,22 @@ O MongoDB é executado localmente por meio do Docker Compose.
 ---
 
 ## Bônus implementados
+
+### Bônus C — Testes Unitários
+
+O projeto possui testes unitários para validar regras de negócio da camada de serviço da API.
+
+Foram implementados testes para os seguintes cenários:
+
+- criação de categoria com dados válidos;
+- tentativa de criação de categoria com nome duplicado;
+- criação de roupa com categoria existente;
+- tentativa de criação de roupa com categoria inexistente.
+
+Os testes foram criados com xUnit e podem ser executados com o comando:
+
+```bash
+dotnet test
 
 ### Bônus D — Princípios SOLID
 

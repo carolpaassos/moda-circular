@@ -10,6 +10,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PermitirFrontend", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 var mongoConnectionString = Environment.GetEnvironmentVariable("MONGODB_CONNECTION_STRING")
     ?? builder.Configuration["MongoDbSettings:ConnectionString"];
 
@@ -42,6 +52,7 @@ builder.Services.AddSingleton<IMongoDatabase>(serviceProvider =>
 
 builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+
 builder.Services.AddScoped<IRoupaRepository, RoupaRepository>();
 builder.Services.AddScoped<IRoupaService, RoupaService>();
 
@@ -52,6 +63,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("PermitirFrontend");
 
 app.UseAuthorization();
 

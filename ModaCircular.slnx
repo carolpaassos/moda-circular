@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/backend/">
+    <Project Path="backend/ModaCircular.Api/ModaCircular.Api.csproj" />
+    <Project Path="backend/ModaCircular.Tests/ModaCircular.Tests.csproj" />
+  </Folder>
+</Solution>

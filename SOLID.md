@@ -53,3 +53,36 @@ Exemplo em `CategoriaService.cs`:
 
 ```csharp
 private readonly ICategoriaRepository _categoriaRepository;
+## 3. I — Interface Segregation Principle
+
+O princípio da segregação de interfaces diz que é melhor ter interfaces menores e específicas do que uma interface grande e genérica com métodos que nem todas as classes precisam utilizar.
+
+No ModaCircular, esse princípio foi aplicado separando as interfaces de acordo com a responsabilidade de cada entidade e camada do sistema.
+
+### Onde aparece
+
+- `Repositories/ICategoriaRepository.cs`
+- `Repositories/IRoupaRepository.cs`
+- `Services/ICategoriaService.cs`
+- `Services/IRoupaService.cs`
+
+### Justificativa
+
+Em vez de criar uma única interface genérica para todas as operações do sistema, o projeto possui interfaces específicas para cada contexto.
+
+A interface `ICategoriaRepository` define apenas os métodos relacionados ao acesso de dados de categorias.
+
+A interface `IRoupaRepository` define apenas os métodos relacionados ao acesso de dados de roupas.
+
+O mesmo acontece na camada de services, onde `ICategoriaService` concentra os contratos relacionados às regras de categoria, enquanto `IRoupaService` concentra os contratos relacionados às regras de roupa.
+
+Com isso, cada classe depende apenas dos métodos que realmente precisa utilizar, evitando acoplamento desnecessário e deixando o código mais organizado e fácil de manter.
+
+### Exemplo no projeto
+
+A `CategoriaService` depende apenas de `ICategoriaRepository`, pois trabalha com regras relacionadas a categorias.
+
+A `RoupaService` depende de `IRoupaRepository` e também de `ICategoriaRepository`, porque ao cadastrar uma roupa é necessário validar se a categoria informada existe.
+
+Essa separação evita uma interface única e grande para todo o sistema, mantendo cada contrato mais simples, específico e coerente com sua responsabilidade.
+:::
